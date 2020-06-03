@@ -127,7 +127,7 @@ Resources:
           artifacts:
             files:
               - '**/*'
-      TimeoutInMinutes: 30
+      TimeoutInMinutes: 60
 
   TestEndpointProjectQA:
     Type: AWS::CodeBuild::Project
