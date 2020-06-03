@@ -137,7 +137,7 @@ TRAINING_PARAMS = {
         # Maximum time to run training for model
         "MaxRuntimeInSeconds": 86400,
         # Maximum time to wait for spot instances to train model
-        "MaxWaitTimeInSeconds": 172800
+        "MaxWaitTimeInSeconds": 3600
     },
     "EnableManagedSpotTraining": True,
 
