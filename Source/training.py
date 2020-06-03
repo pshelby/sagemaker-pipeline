@@ -135,7 +135,7 @@ TRAINING_PARAMS = {
     },
     "StoppingCondition": {
         # Maximum time to run training for model
-        "MaxRuntimeInSeconds": 86400,
+        "MaxRuntimeInSeconds": 3600,
         # Maximum time to wait for spot instances to train model
         "MaxWaitTimeInSeconds": 3600
     },
