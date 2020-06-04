@@ -49,7 +49,7 @@ def write_config_file(config_dict: dict, env: str):
     :param env: Environment name for which to write config values.
     """
     file_path = f'./CloudFormation/configuration_{env}.json'
-    config_dict['Environment'] = env
+    config_dict['Parameters']['Environment'] = env
     with open(file_path, 'w') as config_fh:
         config_fh.write(json.dumps(config_dict))
 
