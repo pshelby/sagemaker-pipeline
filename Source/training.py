@@ -10,10 +10,13 @@ import wget
 
 
 START = time.time()
-ROLE = sys.argv[1]
+
+ROLE_NAME = sys.argv[1]
 BUCKET = sys.argv[2]
 STACK_NAME = sys.argv[3]
 COMMIT_ID = sys.argv[4][0:7]
+
+ACCOUNT_ID = boto3.client('sts').get_caller_identity().get('Account')
 TIMESTAMP = time.strftime('%Y-%m-%d-%H-%M-%S', time.gmtime())
 TRAINING_IMAGE = (
     '811284229777.dkr.ecr.us-east-1.amazonaws.com/image-classification:latest'
@@ -116,7 +119,7 @@ TRAINING_PARAMS = {
         "TrainingImage": TRAINING_IMAGE,
         "TrainingInputMode": "File"
     },
-    "RoleArn": ROLE,
+    "RoleArn": f'arn:aws:iam::{ACCOUNT_ID}:role/{ROLE_NAME}',
     "OutputDataConfig": {"S3OutputPath": f's3://{BUCKET}/'},
     "ResourceConfig": {
         "InstanceCount": 1,
@@ -215,7 +218,7 @@ CONFIG_DATA = {
         "CommitID": COMMIT_ID,
         "Environment": None,
         "ParentStackName": STACK_NAME,
-        "SageMakerRole": ROLE,
+        "SageMakerRole": ROLE_NAME,
         "Timestamp": TIMESTAMP
     }
 }
