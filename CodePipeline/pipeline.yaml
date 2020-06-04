@@ -117,7 +117,7 @@ Resources:
             build:
               commands:
                 - echo "Running training.py"
-                - python3 Source/training.py "${SagemakerRole.Arn}"
+                - python3 Source/training.py "${SagemakerRole}"
                   "${DataBucket}" "${AWS::StackName}"
                   $CODEBUILD_RESOLVED_SOURCE_VERSION
             post_build:
