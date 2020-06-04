@@ -122,8 +122,8 @@ TRAINING_PARAMS = {
     "RoleArn": f'arn:aws:iam::{ACCOUNT_ID}:role/{ROLE_NAME}',
     "OutputDataConfig": {"S3OutputPath": f's3://{BUCKET}/'},
     "ResourceConfig": {
-        "InstanceCount": 2,
-        "InstanceType": "ml.p2.xlarge",
+        "InstanceCount": 1,
+        "InstanceType": "ml.p3.2xlarge",
         "VolumeSizeInGB": 50
     },
     "TrainingJobName": JOB_NAME,
