@@ -105,7 +105,7 @@ NUM_CLASSES = "257"
 MINI_BATCH_SIZE = "64"
 
 # number of epochs
-EPOCHS = "20"
+EPOCHS = "10"
 
 # learning rate
 LEARNING_RATE = "0.01"
@@ -123,7 +123,7 @@ TRAINING_PARAMS = {
     "OutputDataConfig": {"S3OutputPath": f's3://{BUCKET}/'},
     "ResourceConfig": {
         "InstanceCount": 1,
-        "InstanceType": "ml.p3.2xlarge",
+        "InstanceType": "ml.p2.xlarge",
         "VolumeSizeInGB": 50
     },
     "TrainingJobName": JOB_NAME,
@@ -140,9 +140,9 @@ TRAINING_PARAMS = {
         # Maximum time to run training for model
         "MaxRuntimeInSeconds": 3600,
         # Maximum time to wait for spot instances to train model
-        "MaxWaitTimeInSeconds": 3600
+        # "MaxWaitTimeInSeconds": 3600
     },
-    "EnableManagedSpotTraining": True,
+    # "EnableManagedSpotTraining": True,
 
     # Training data should be inside a subdirectory called "train"
     # Validation data should be inside a subdirectory called "validation"
