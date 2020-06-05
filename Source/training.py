@@ -140,9 +140,9 @@ TRAINING_PARAMS = {
         # Maximum time to run training for model
         "MaxRuntimeInSeconds": 3600,
         # Maximum time to wait for spot instances to train model
-        # "MaxWaitTimeInSeconds": 3600
+        "MaxWaitTimeInSeconds": 3600
     },
-    # "EnableManagedSpotTraining": True,
+    "EnableManagedSpotTraining": True,
 
     # Training data should be inside a subdirectory called "train"
     # Validation data should be inside a subdirectory called "validation"
