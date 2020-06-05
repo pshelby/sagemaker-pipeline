@@ -35,7 +35,7 @@ for category_id in IMG_CATEGORY_IDS:
     IMG_START = time.time()
 
     IMG_CATEGORY_NAME = OBJECT_CATEGORIES[int(category_id) - 1]
-    IMG_SUFFIX = str(randint(1, 200)).rjust(4, '0')
+    IMG_SUFFIX = str(randint(1, 100)).rjust(4, '0')
     IMG_SHORTNAME = f'{IMG_CATEGORY_NAME}_{IMG_SUFFIX}.jpg'
     IMG_URL = f'{IMG_URL_PREFIX}/{category_id}.{IMG_CATEGORY_NAME}/{category_id}_{IMG_SUFFIX}.jpg'
     print(f'Test Image: {IMG_URL}')
