@@ -105,7 +105,7 @@ NUM_CLASSES = "257"
 MINI_BATCH_SIZE = "64"
 
 # number of epochs
-EPOCHS = "40"
+EPOCHS = "20"
 
 # learning rate
 LEARNING_RATE = "0.01"
